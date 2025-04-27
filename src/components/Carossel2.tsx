@@ -51,7 +51,7 @@ const Carrossel2 = ({obj,width = 50, height = 40,marginStart = 0.2}:Carrossel2Pr
     return(
 
             
-        <div className="w-screen">
+        <div className="w-full">
         <div className="relative overflow-hidden">
          
             <div  className="flex space-x-3 transition ease-out duration-500" style={{

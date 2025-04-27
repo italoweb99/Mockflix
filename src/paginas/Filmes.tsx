@@ -64,7 +64,7 @@ const Filme = () =>{
 {isTrailer?(
    
 <YouTube videoId={`${trailer[0].key}`} opts={{
-    width: "1520px",
+    width: "1536",
     height: "500px",
     playerVars: {
         autoplay:1,
@@ -72,7 +72,7 @@ const Filme = () =>{
     },
 }}/>):(
     <img src={`https://image.tmdb.org/t/p/original${filme.backdrop_path}`} alt={filme.title} style={{
-        width: '1520px',
+        width: '1536x',
         height: '500px',
         objectFit: 'cover',
     }}/>

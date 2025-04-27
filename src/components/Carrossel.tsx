@@ -46,11 +46,8 @@ const Carosel = ({width = 100,height=150,time = 10000}) =>{
         return ()=> clearInterval(interval);
     },[current])
     return(
-        <div style={{
-            width: wdToPixel,
-       
-        }}>
-        <div className="relative overflow-hidden">
+        <div>
+        <div className="relative overflow-hidden ">
             <div className="flex transiton justify-start items-start ease-out duration-500" style={{
                 transform: `translateX(-${current*(wdToPixel)}px)`,
                 width: imgs.length*wdToPixel

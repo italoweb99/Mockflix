@@ -6,24 +6,24 @@ import CarrosselMelhorAval from "../components/CarrosselMelhorAval"
 
 const Home = () => {
     return (
-      <div className="bg-bgpurple min-h-screen ">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-8">
+      <div className="bg-bgpurple ">
+       
+          <div className="mb-8 ">
             <Carrossel />
           </div>
           <div className="mt-6 font-medium">
             <h1 className="text-2xl font-bold text-gray-200 m-2 ml-10">Em cartaz</h1>
             <CarrosselEmCartaz />
           </div>
-          <div className="mt-6 font-medium">
+          <div className="mt-6 font-medium ">
             <h1 className="text-2xl font-bold text-gray-200 m-2 ml-10">Em Alta</h1>
             <CarrosselEmAlta />
           </div>
-          <div className="mt-6 font-medium">
+          <div className="mt-6 font-medium ">
             <h1 className="text-2xl font-bold text-gray-200 m-2 ml-10">Melhor Avaliados</h1>
             <CarrosselMelhorAval />
           </div>
-        </div>
+     
       </div>
     );
   };
