@@ -82,13 +82,13 @@ const Carosel = ({height=150,time = 10000}) =>{
               <div className="flex items-center bg-gradient-to-r transition ease-out duration-500 hover:from-black/90  to-transparent  hover:text-white hover:backdrop-blur-[1px] h-full w-8 justify-center pointer-events-auto "onClick={()=>prev()} style={{
                 width: wdToPixel*0.05
             }}>
-            <FaChevronLeft className="hover:text-5xl transition ease-out duration-500"/>
+            <FaChevronLeft className="hover:text-5xl transition-all ease-out duration-300"/>
             </div>
            
             <div className="flex items-center bg-gradient-to-l transition ease-out duration-500 hover:from-black/90   to-transparent  hover:backdrop-blur-[1px] h-full w-8 justify-center pointer-events-auto  hover:text-white" onClick={()=>next()} style={{
                     width: wdToPixel*0.05
                 }}>
-            <FaChevronRight className="hover:text-5xl transition ease-out duration-500"/>
+            <FaChevronRight className="hover:text-5xl transition-all ease-out duration-300"/>
                 </div>
                 </div>
             }

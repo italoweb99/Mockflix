@@ -69,7 +69,7 @@ const Carrossel2 = ({obj,width = 50,marginStart = 0.2}:Carrossel2Props) =>{
             <div className="flex items-center bg-gradient-to-r transition ease-out duration-500 hover:from-black/60 from-30%  to-transparent to-90% hover:text-white hover:backdrop-blur-[1px] h-full w-8 justify-center pointer-events-auto "onClick={()=>prev()} style={{
                 width: wdToPixel*marginStart
             }}>
-            <FaChevronLeft className="hover:text-3xl"/>
+            <FaChevronLeft className="hover:text-3xl transition-all ease-out duration-300"/>
             </div>
             {
                 showRControl &&
@@ -77,7 +77,7 @@ const Carrossel2 = ({obj,width = 50,marginStart = 0.2}:Carrossel2Props) =>{
                 <div className="flex items-center bg-gradient-to-l transition ease-out duration-500 hover:from-black/60 from-30%  to-transparent to-90% hover:backdrop-blur-[1px] h-full w-8 justify-center pointer-events-auto  hover:text-white" onClick={()=>next()} style={{
                     width: wdToPixel*marginStart
                 }}>
-            <FaChevronRight className="hover:text-3xl"/>
+            <FaChevronRight className="hover:text-3xl transition-all ease-out duration-300"/>
                 </div>
             )
             }
