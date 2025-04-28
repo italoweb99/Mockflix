@@ -56,7 +56,7 @@ const Carosel = ({height=150,time = 10000}) =>{
                  
                 {
                   imgs.map((img)=>(
-                   <Link to={`/filme/${img.id}`}>
+                   <Link to={`/Mockflix/filme/${img.id}`}>
                     <div>
                     <img 
                     src={wdToPixel> 1600 ? `https://image.tmdb.org/t/p/original${img.backdrop_path}`: `https://image.tmdb.org/t/p/w1280${img.backdrop_path}`} 

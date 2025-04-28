@@ -15,8 +15,8 @@ function App() {
     <Header/>
     <main className="pt-18 bg-bgpurple ">
     <Routes>
-      <Route path="/" element = {<Home/>}/>
-      <Route path="/filme/:id" element={<Filmes/>}/>
+      <Route path="/Mockflix" element = {<Home/>}/>
+      <Route path="/Mockflix/filme/:id" element={<Filmes/>}/>
     </Routes>
     </main>
     </BrowserRouter>
