@@ -1,55 +1,43 @@
-# React + TypeScript + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
 # Mockflix
+
+Esse projeto é o trabalho trabalho da disciplina de desenvolvimento web da Centro Universitário Municipal de Franca (Uni-FACEF) e consiste na criação de um site capaz de acessar a API TMDB
+e exibir informações sobre os Filmes.
+
+![Principal](https://github.com/user-attachments/assets/1524c1a9-d956-4201-ae20-d1a4623ab7b0)
+
+<p align="center">
+  <h1>Linguagens e recursos empregadas</h1>
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=react,typescript,tailwind,vite" />
+  </a>
+</p>
+
+## Instalação
+
+Acesse o Site [Mockflix](https://italoweb99.github.io/Mockflix/)
+
+### Ou
+
+Clone e instale as dependências
+```
+git clone https://github.com/italoweb99/Mockflix.git
+cd Mockflix
+npm install
+```
+
+## Uso
+
+### Seleção de Filmes
+
+Ao abrir o site são mostrados uma grande seleção de filmes, divididos em categorias como Em Cartaz, Mais populares, e mais bem avaliados. Ao clicar nos filmes será direcionado para uma página com mais informações dos filmes.
+
+![GravaodeTela2025-04-27235141-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/8d6eb093-38d5-425e-ac9b-a66041e76267)
+
+### Mais informações
+
+Ao clicar no filme será exibido, se disponível, o trailer do filme, genero, ano de lançamento e uma breve descrição sobre o filme
+
+![GravaodeTela2025-04-27235141-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/6dc67cef-6249-4875-a01a-5a730a21bd10)
+
+
+
