@@ -82,7 +82,7 @@ const Filme = () =>{
 
 <div className="w-full h-20  bg-gradient-to-t from-bgpurple from-20% to-transparent to-100% absolute bottom-0"></div>
 </div>
-<div className="bg-bgpurple mb-10">
+<div className="bg-bgpurple pb-10">
 <h1 className="text-3xl text-gray-200 font-bold my-2 mx-10">{filme?.title}</h1>
 <div className="flex text-xl text-gray-400 font-medium my-2 mx-10">
 <p>{filme?.genres.map(name => name.name).join(', ')}</p>

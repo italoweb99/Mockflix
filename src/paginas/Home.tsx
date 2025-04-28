@@ -6,7 +6,7 @@ import CarrosselMelhorAval from "../components/CarrosselMelhorAval"
 
 const Home = () => {
     return (
-      <div className="bg-bgpurple ">
+      <div className="bg-bgpurple pb-10 ">
        
           <div className="mb-8 ">
             <Carrossel />
