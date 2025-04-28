@@ -37,7 +37,8 @@ Ao abrir o site são mostrados uma grande seleção de filmes, divididos em cate
 
 Ao clicar no filme será exibido, se disponível, o trailer do filme, genero, ano de lançamento e uma breve descrição sobre o filme
 
-![GravaodeTela2025-04-27235141-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/6dc67cef-6249-4875-a01a-5a730a21bd10)
+![GravaodeTela2025-04-27235245-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/5abb2f95-f93b-456e-9f8f-4e4e2a778980)
+
 
 
 
