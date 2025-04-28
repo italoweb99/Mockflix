@@ -1,19 +1,26 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import Carrossel2 from "./components/Carossel2"
+
 import Filmes from "./paginas/Filmes"
-import Carrossel from "./components/Carrossel"
+
 import Home from "./paginas/Home"
+import Header from "./components/Header"
 
 function App() {
   
 
   return (
+    <>
+
     <BrowserRouter>
+    <Header/>
+    <main className="pt-18 bg-bgpurple ">
     <Routes>
       <Route path="/" element = {<Home/>}/>
       <Route path="/filme/:id" element={<Filmes/>}/>
     </Routes>
+    </main>
     </BrowserRouter>
+    </>
   )
 }
 export default App
