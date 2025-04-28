@@ -65,7 +65,7 @@ const Filme = () =>{
    
 <YouTube videoId={`${trailer[0].key}`} opts={{
     width:wScreen-15,
-    height: wScreen > 1530? 700 : 600,
+    height: wScreen > 1540? 700 : 600,
     playerVars: {
         autoplay:1,
         controls: 0,
