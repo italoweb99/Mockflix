@@ -9,7 +9,27 @@ const Filme = () =>{
     const [isLoading,setIsLoading] = useState(true);
     const [filme,setFilmes] = useState<{ backdrop_path: string, title: string, genres: any[], release_date: string, overview: string}>();
     const [isTrailer,setIsTrailer] = useState(false);
+    const [providers,setProviders] = useState<{display_priority: number, logo_path: string,provider_id: number,provider_name: string}[]>([])
+    const [avalibleStream,setAvalableStream] = useState(true);
     const wScreen = window.innerWidth;
+    const getStreaming = async () =>{
+        await axios.get(`https://api.themoviedb.org/3/movie/${id}/watch/providers`,{
+            params:{
+                api_key:"c603e5708f0df97ff3bcd6e0833721a8",
+                language: "pt-BR"
+            
+            }})
+            .then(response => {
+               
+                setProviders(response.data.results.BR.flatrate);
+            })
+        
+        .catch(error =>{
+            console.log("Erro ao carregar provedor", error);
+            setAvalableStream(false);
+        })
+
+    }
     const loadMovie = async() =>{
         await axios.get(`https://api.themoviedb.org/3/movie/${id}`,{
             params:{
@@ -21,7 +41,7 @@ const Filme = () =>{
         .then(response =>{
          
             setFilmes(response.data);
-            console.log(response.data)
+      
             setIsLoading(false);
            
         })
@@ -54,8 +74,9 @@ const Filme = () =>{
     useEffect(()=>{
        getTrailer();
        loadMovie();
+       getStreaming();
     },[])
-    console.log(trailer);
+   
  return(
     <div className="bg-bgpurple">
     {!isLoading &&
@@ -64,11 +85,13 @@ const Filme = () =>{
 {isTrailer?(
    
 <YouTube videoId={`${trailer[0].key}`} opts={{
-    width:wScreen-15,
+    width:'100%',
     height: wScreen > 1540? 700 : 600,
     playerVars: {
         autoplay:1,
         controls: 0,
+        cc_load_policy: 0,
+        iv_load_policy: 3,
     },
 }} />):(
     <img src={`https://image.tmdb.org/t/p/original${filme?.backdrop_path}`} alt={filme?.title} style={{
@@ -88,6 +111,20 @@ const Filme = () =>{
 <p>{filme?.genres.map(name => name.name).join(', ')}</p>
 <p className="ml-2">{filme?.release_date.split('-')[0]}</p>
 </div>
+{
+avalibleStream &&
+<>
+<p className="text-2xl text-gray-200 font-bold my-2 mx-10">Assista em:</p>
+<div className="flex mx-10">
+    
+    {
+       providers.map(provider => (
+         <img src={`https://image.tmdb.org/t/p/original/${provider.logo_path}`} className="h-14 ml-2 my-2 rounded-md"/>
+       ))
+    }
+</div>
+</>
+}
 <p className="text-2xl text-gray-200 font-medium mx-10 my-2">{filme?.overview}</p>
 </div>
 </div>
