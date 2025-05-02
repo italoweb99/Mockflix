@@ -75,12 +75,12 @@ const Filme = () =>{
        getTrailer();
        loadMovie();
        getStreaming();
-    },[])
+    },[id])
    
  return(
     <div className="bg-bgpurple">
     {!isLoading &&
-   <div className="h-screen">
+   <div key={filme?.title} className="h-screen">
  <div className="relative">
 {isTrailer?(
    
