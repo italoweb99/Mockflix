@@ -4,7 +4,7 @@ import Filmes from "./paginas/Filmes"
 
 import Home from "./paginas/Home"
 import Header from "./components/Header"
-import Testes from "./paginas/Testes"
+
 
 function App() {
   
@@ -18,7 +18,6 @@ function App() {
     <Routes>
       <Route path="/Mockflix" element = {<Home/>}/>
       <Route path="/Mockflix/filme/:id" element={<Filmes/>}/>
-      <Route path="/Mockflix/testes" element={<Testes/>}/>
     </Routes>
     </main>
     </BrowserRouter>
