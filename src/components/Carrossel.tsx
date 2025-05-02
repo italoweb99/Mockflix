@@ -9,7 +9,7 @@ const Carosel = ({height=150,time = 10000}) =>{
     const hgToPixel = height*4;
     const [current, setCurrent] = useState(0);
     const [imgs,setFilmes] =useState<any[]>([]);
-   
+   const[isLoading,setIsLoading] = useState(true);
     const getFilmes = async () =>{
         await axios.get(`https://api.themoviedb.org/3/movie/now_playing`,{
             params:{
@@ -21,7 +21,7 @@ const Carosel = ({height=150,time = 10000}) =>{
         .then(response =>{
          
             setFilmes(response.data.results);
-         
+          //setIsLoading(false);
       
            
         })
@@ -53,13 +53,20 @@ const Carosel = ({height=150,time = 10000}) =>{
                 width: imgs.length*wdToPixel
                 
             }}>
-                 
+                <>
+                { isLoading &&
+                <div className="bg-gray-950"style={{
+                    width: '100vw',
+                    height: hgToPixel
+                }}></div>
+                 }  
                 {
                   imgs.map((img)=>(
                    <Link to={`/Mockflix/filme/${img.id}`} key ={img.id}>
                     <div>
                     <img 
                     src={wdToPixel> 1600 ? `https://image.tmdb.org/t/p/original${img.backdrop_path}`: `https://image.tmdb.org/t/p/w1280${img.backdrop_path}`} 
+                    onLoad={()=>setIsLoading(false)}
                     style={{
                        width: '100vw',
                        height: hgToPixel
@@ -74,7 +81,7 @@ const Carosel = ({height=150,time = 10000}) =>{
                   </Link>
                   ))
                 }
-                
+            </>
             </div>
             {
          
