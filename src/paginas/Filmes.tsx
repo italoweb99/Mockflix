@@ -119,7 +119,7 @@ avalibleStream &&
     
     {
        providers.map(provider => (
-         <img src={`https://image.tmdb.org/t/p/original/${provider.logo_path}`} className="h-14 ml-2 my-2 rounded-md"/>
+         <img src={`https://image.tmdb.org/t/p/original/${provider.logo_path}`} key = {provider.provider_id} className="h-14 ml-2 my-2 rounded-md"/>
        ))
     }
 </div>
