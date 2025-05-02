@@ -1,4 +1,5 @@
 @import 'tailwindcss';
  @theme {
     --color-bgpurple: #290133;
+    --color-bgpurplehover: #540169;
  }

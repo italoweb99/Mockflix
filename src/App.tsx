@@ -5,6 +5,7 @@ import Filmes from "./paginas/Filmes"
 import Home from "./paginas/Home"
 import Header from "./components/Header"
 
+
 function App() {
   
 
@@ -13,7 +14,7 @@ function App() {
 
     <BrowserRouter>
     <Header/>
-    <main className="pt-18 bg-bgpurple ">
+    <main className="pt-18 h-screen bg-bgpurple ">
     <Routes>
       <Route path="/Mockflix" element = {<Home/>}/>
       <Route path="/Mockflix/filme/:id" element={<Filmes/>}/>
