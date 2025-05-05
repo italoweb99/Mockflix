@@ -13,6 +13,10 @@ function Header() {
   const handleFilmes = (e: any) =>{
     setFilmes(e)
   }
+  const handleSearchclick = () =>{
+    setSBarFocus(false);
+    setSboxFocus(false);
+  }
   const handleClickOutside = (event: any) =>{
     if(box && box.current && !box.current.contains(event.target)){
       setSboxFocus(false);
@@ -61,7 +65,7 @@ function Header() {
       <Link to ='/Mockflix' className="rounded-b-xl">
         <h1 className= 'text-2xl font-bold text-gray-200 hover:text-gray-300'>Mockflix</h1>
         </Link>
-        <SearchBar isScroll={scrolling} onFocus = {handleSbarFocus} sboxState = {sboxFocus} boxHandler={handleBox} getFilmes={handleFilmes}/>
+        <SearchBar isScroll={scrolling} onFocus = {handleSbarFocus} sboxState = {sboxFocus} boxHandler={handleBox} getFilmes={handleFilmes} searchClick = {handleSearchclick}/>
       </div>
     </header>
     {

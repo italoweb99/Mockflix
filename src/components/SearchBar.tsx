@@ -1,14 +1,24 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { FaSearch } from "react-icons/fa"
+import { useNavigate } from "react-router-dom"
 interface sBarType{
     isScroll? : boolean,
     sboxState: boolean,
     onFocus: (e: boolean) => void,
     boxHandler: () =>void,
-    getFilmes: (e: any) => void
+    getFilmes: (e: any) => void,
+    searchClick:() => void
 }
-const SearchBar = ({isScroll=false,sboxState,onFocus,boxHandler,getFilmes}:sBarType) =>{
+
+const SearchBar = ({isScroll=false,sboxState,onFocus,boxHandler,getFilmes,searchClick}:sBarType) =>{
+    const nav = useNavigate()
+    const handleKeyDown = (e:any) =>{
+        if(e.key == 'Enter' && query.trim()!=''){
+           nav(`Mockflix/search/${query}`);
+           searchClick()
+        }
+    }
     const [query,setQuery] = useState<any>("")
     const [isClicked,setIsClicked] = useState(false)
     const[sbarState,setSbarState] = useState(false)
@@ -63,6 +73,7 @@ const SearchBar = ({isScroll=false,sboxState,onFocus,boxHandler,getFilmes}:sBarT
         placeholder="Pesquisar"
         onChange={handleText}
         className="flex-grow h-6 bg-white rounded-full placeholder:text-gray-500 px-3 outline-none "
+        onKeyDown={handleKeyDown}
         autoFocus
         />
         <FaSearch className="mx-2"/>
