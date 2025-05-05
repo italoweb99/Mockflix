@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useRef, useState } from "react"
+import { Link } from "react-router-dom";
 
 const MostrarMais = () =>{
     const [page,setPage] = useState(1);
@@ -47,10 +48,12 @@ const MostrarMais = () =>{
          {
             
             movies.map(movie =>(
+                <Link to = {`/Mockflix/filme/${movie.id}`}>
                 <div className="hover:scale-110 transition-all duration-300">
                 <img className="rounded-lg" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}/>
                 <p className="line-clamp-1">{movie.title}</p>
                 </div>
+                </Link>
             ))
          }
          <div id="sentinela" className="w-full h-5"></div>
