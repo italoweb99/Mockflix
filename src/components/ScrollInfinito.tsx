@@ -1,16 +1,17 @@
 import axios from "axios";
 import { useEffect, useRef, useState } from "react"
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
-const MostrarMais = () =>{
+const MostrarMais = ({tipo}) =>{
     const [page,setPage] = useState(1);
+    //const{tipo} = useParams();
     const[movies,setMovies] = useState([]);
     const [loading,setLoading] = useState(false);
     const observer = useRef<any>(null);
     const getMovies = async() =>{
         setLoading(true);
         try{
-          const res =  await axios.get("https://api.themoviedb.org/3/movie/popular",{
+          const res =  await axios.get(`https://api.themoviedb.org/3/movie/${tipo}`,{
                 params:{
                     api_key: "c603e5708f0df97ff3bcd6e0833721a8",
                     language: "pt-BR",

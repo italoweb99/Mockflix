@@ -4,7 +4,9 @@ import Filmes from "./paginas/Filmes"
 
 import Home from "./paginas/Home"
 import Header from "./components/Header"
-import MostrarMais from "./components/MostrarMais"
+import PopularesPag from "./paginas/PopularesPag"
+import EmCartazPag from "./paginas/EmCartazPag"
+import MelhorAvaliadosPag from "./paginas/MelhorAvaliadosPag"
 
 
 function App() {
@@ -19,7 +21,9 @@ function App() {
     <Routes>
       <Route path="/Mockflix" element = {<Home/>}/>
       <Route path="/Mockflix/filme/:id" element={<Filmes/>}/>
-      <Route path="/Mockflix/teste" element ={<MostrarMais/>}/>
+      <Route path="/Mockflix/filmes/Populares" element ={<PopularesPag/>}/>
+      <Route path="/Mockflix/filmes/em_cartaz" element = {<EmCartazPag/>}/>
+      <Route path="/Mockflix/filmes/melhor_avaliados" element={<MelhorAvaliadosPag/>}/>
     </Routes>
     </main>
     </BrowserRouter>
