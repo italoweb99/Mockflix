@@ -5,7 +5,7 @@ const MostrarMais = () =>{
     const [page,setPage] = useState(1);
     const[movies,setMovies] = useState([]);
     const [loading,setLoading] = useState(false);
-    const observer = useRef(null);
+    const observer = useRef<any>(null);
     const getMovies = async() =>{
         setLoading(true);
         try{
