@@ -3,3 +3,7 @@
     --color-bgpurple: #290133;
     --color-bgpurplehover: #540169;
  }
+ #root {
+   background-color:  #290133;
+   height: 100vh;
+ }

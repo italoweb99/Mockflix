@@ -10,10 +10,12 @@ const ScrollInfinito = ({tipo}:ScrollInfinitoTipo) =>{
     const {query} = useParams();
     const[movies,setMovies] = useState<any []>([]);
     const [loading,setLoading] = useState(false);
+    const [notFound, setNotFound] = useState(false);
     const observer = useRef<any>(null);
     useEffect(() => {
         setMovies([]); // Limpa os filmes para nova busca
         setPage(1); // Reseta página para a primeira
+        setNotFound(false);
     }, [query]);
     
     const getMovies = async() =>{
@@ -29,6 +31,9 @@ const ScrollInfinito = ({tipo}:ScrollInfinitoTipo) =>{
             }
            })
            setMovies((prevM)=>[...prevM, ...res.data.results]);
+           if(res.data.total_results == 0){
+            setNotFound(true);
+           }
            
         }
         catch(error){
@@ -59,7 +64,7 @@ const ScrollInfinito = ({tipo}:ScrollInfinitoTipo) =>{
     useEffect(()=>{
         observer.current = new IntersectionObserver(
             (entrie) =>{
-                if(entrie[0].isIntersecting){
+                if(entrie[0].isIntersecting && !notFound){
                     setPage((prevP) => prevP +1);
                 }
             },
@@ -69,12 +74,12 @@ const ScrollInfinito = ({tipo}:ScrollInfinitoTipo) =>{
             observer.current.observe(document.getElementById('sentinela'));
         }
         return () => observer.current?.disconnect();
-    },[])
+    },[notFound])
   return (
   <>
     <div className="grid grid-cols-6 gap-4 mx-4 mt-4 text-gray-200">
       {movies.length === 0 && !loading ? (
-        <p className="col-span-6 text-center text-gray-400 h-screen">
+        <p className="col-span-6 text-center text-gray-400">
           Nenhum filme encontrado para "{query}". Tente outra busca!
         </p>
       ) : (
