@@ -75,7 +75,7 @@ const Filme = () =>{
        getTrailer();
        loadMovie();
        getStreaming();
-    },[])
+    },[id])
    
  return(
     <div className="bg-bgpurple">

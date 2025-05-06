@@ -4,13 +4,18 @@ import { Link, useParams } from "react-router-dom";
 interface ScrollInfinitoTipo{
     tipo: string,
 }
-const MostrarMais = ({tipo}:ScrollInfinitoTipo) =>{
+const ScrollInfinito = ({tipo}:ScrollInfinitoTipo) =>{
     const [page,setPage] = useState(1);
     //const{tipo} = useParams();
     const {query} = useParams();
-    const[movies,setMovies] = useState([]);
+    const[movies,setMovies] = useState<any []>([]);
     const [loading,setLoading] = useState(false);
     const observer = useRef<any>(null);
+    useEffect(() => {
+        setMovies([]); // Limpa os filmes para nova busca
+        setPage(1); // Reseta página para a primeira
+    }, [query]);
+    
     const getMovies = async() =>{
         setLoading(true);
         if(tipo == 'search'){
@@ -24,6 +29,7 @@ const MostrarMais = ({tipo}:ScrollInfinitoTipo) =>{
             }
            })
            setMovies((prevM)=>[...prevM, ...res.data.results]);
+           
         }
         catch(error){
             console.log("Erro ao carregar resultados da pasquisa",error)
@@ -49,7 +55,7 @@ const MostrarMais = ({tipo}:ScrollInfinitoTipo) =>{
     }
     useEffect(()=>{
         getMovies()
-    },[page,query]);
+    },[page]);
     useEffect(()=>{
         observer.current = new IntersectionObserver(
             (entrie) =>{
@@ -64,23 +70,26 @@ const MostrarMais = ({tipo}:ScrollInfinitoTipo) =>{
         }
         return () => observer.current?.disconnect();
     },[])
-    return(
-         <>
-         <div className="grid grid-cols-6 gap-4 mx-4 mt-4 text-gray-200 ">
-         {
-            
-            movies.map((movie,index) =>(
-                <Link key={`${movie.id}-${index}`} to = {`/Mockflix/filme/${movie.id}`}>
-                <div className="hover:scale-110 transition-all duration-300">
-                <img className="rounded-lg" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}/>
-                <p className="line-clamp-1">{movie.title}</p>
-                </div>
-                </Link>
-            ))
-         }
-         <div id="sentinela" className="w-full h-5"></div>
-         </div>
-         </>
-    )
+  return (
+  <>
+    <div className="grid grid-cols-6 gap-4 mx-4 mt-4 text-gray-200">
+      {movies.length === 0 && !loading ? (
+        <p className="col-span-6 text-center text-gray-400 h-screen">
+          Nenhum filme encontrado para "{query}". Tente outra busca!
+        </p>
+      ) : (
+        movies.map((movie, index) => (
+          <Link key={`${movie.id}-${index}`} to={`/Mockflix/filme/${movie.id}`}>
+            <div className="hover:scale-110 transition-all duration-300">
+              <img className="rounded-lg" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} />
+              <p className="line-clamp-1">{movie.title}</p>
+            </div>
+          </Link>
+        ))
+      )}
+      <div id="sentinela" className="w-full h-5"></div>
+    </div>
+  </>
+);
 }
-export default MostrarMais
+export default ScrollInfinito
