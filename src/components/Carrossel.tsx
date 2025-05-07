@@ -47,6 +47,12 @@ const Carosel = ({height=150,time = 10000}) =>{
     },[current])
     return(
         <div>
+              { isLoading &&
+                <div className="bg-gray-900"style={{
+                    width: '100vw',
+                    height: hgToPixel
+                }}></div>
+                 }  
         <div className="relative overflow-hidden ">
             <div className="flex transiton justify-start items-start ease-out duration-500" style={{
                 transform: `translateX(-${current*(wdToPixel)}px)`,
@@ -54,12 +60,7 @@ const Carosel = ({height=150,time = 10000}) =>{
                 
             }}>
                 <>
-                { isLoading &&
-                <div className="bg-gray-950"style={{
-                    width: '100vw',
-                    height: hgToPixel
-                }}></div>
-                 }  
+              
                 {
                   imgs.map((img)=>(
                    <Link to={`/Mockflix/filme/${img.id}`} key ={img.id}>

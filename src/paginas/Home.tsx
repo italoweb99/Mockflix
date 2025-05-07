@@ -1,8 +1,10 @@
 
+import { Link } from "react-router-dom";
 import Carrossel from "../components/Carrossel"
 import CarrosselEmAlta from "../components/CarrosselEmAlta"
 import CarrosselEmCartaz from "../components/CarrosselEmCartaz"
 import CarrosselMelhorAval from "../components/CarrosselMelhorAval"
+import { FaChevronRight } from "react-icons/fa";
 
 const Home = () => {
     return (
@@ -12,15 +14,30 @@ const Home = () => {
             <Carrossel />
           </div>
           <div className="mt-6 font-medium">
-            <h1 className="text-2xl font-bold text-gray-200 m-2 ml-10">Em cartaz</h1>
+            <div className="flex items-center m-2 ml-10 text-gray-200 hover:text-gray-300 text-lg">           
+             <h1 className="text-2xl font-bold ">Em Cartaz</h1>
+            <Link to={'/Mockflix/filmes/em_cartaz'} className="flex items-center ml-10 ">Veja mais
+            <FaChevronRight className=" ml-1"/>
+            </Link>
+            </div>
             <CarrosselEmCartaz />
           </div>
           <div className="mt-6 font-medium ">
-            <h1 className="text-2xl font-bold text-gray-200 m-2 ml-10">Em Alta</h1>
+          <div className="flex items-center m-2 ml-10 text-gray-200 hover:text-gray-300 text-lg">           
+             <h1 className="text-2xl font-bold ">Em Alta</h1>
+            <Link to={'/Mockflix/filmes/populares'} className="flex items-center ml-10 ">Veja mais
+            <FaChevronRight className=" ml-1"/>
+            </Link>
+            </div>
             <CarrosselEmAlta />
           </div>
           <div className="mt-6 font-medium ">
-            <h1 className="text-2xl font-bold text-gray-200 m-2 ml-10">Melhor Avaliados</h1>
+          <div className="flex items-center m-2 ml-10 text-gray-200 hover:text-gray-300 text-lg">           
+             <h1 className="text-2xl font-bold ">Melhor Avaliados</h1>
+            <Link to={'/Mockflix/filmes/melhor_avaliados'} className="flex items-center ml-10 ">Veja mais
+            <FaChevronRight className=" ml-1"/>
+            </Link>
+            </div>
             <CarrosselMelhorAval />
           </div>
      
