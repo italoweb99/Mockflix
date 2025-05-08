@@ -6,14 +6,16 @@ interface Carrossel2Props{
     obj: any;
     width?: number;
     marginStart?: number;
+    isloading: boolean;
   
 }
 
-const Carrossel2 = ({obj,width = 50,marginStart = 0.2}:Carrossel2Props) =>{
+const Carrossel2 = ({obj,width = 50,marginStart = 0.2,isloading}:Carrossel2Props) =>{
  
     const wdToPixel = width*4;
     const [current, setCurrent] = useState(0);
     const { innerWidth: widthS} = window;
+    //const [isloading ,setIsLoading] = useState(true);
     const [showControls,setShowControls] = useState(false);
     const [showRControl,setShowRControl] = useState(true);
    
@@ -43,25 +45,45 @@ const Carrossel2 = ({obj,width = 50,marginStart = 0.2}:Carrossel2Props) =>{
             
         <div className="w-full">
         <div className="relative overflow-hidden">
-         
+         {
+             isloading &&
+                <div className="flex space-x-3" style={{
+                    marginInlineStart: `${wdToPixel*marginStart}px`,
+                    width: 8 * wdToPixel
+                }}>
+                    {
+                Array.from({length: 8}, (index: number) =>(
+                    <div key={index} className="rounded-md bg-gray-500" style={{
+                        width: `${wdToPixel}px`,
+                           height: `${wdToPixel*1.5}px`
+                    }}></div>
+                ))
+            }
+                </div>
+         }
             <div  className="flex space-x-3 transition ease-out duration-500" style={{
                 transform: `translateX(-${current*(wdToPixel)}px)`,
                 marginInlineStart: `${wdToPixel*marginStart}px`,
                 width: obj.length*wdToPixel
             }}>
+                
                 {
+                   ! isloading && 
                   obj.map((item: any) =>(
                     <div key = {item.id} className="text-gray-200 relative w-full"
                     >
                     <Link to = {`/Mockflix/filme/${item.id}`} key = {item.id}>
                    <img  src={`https://image.tmdb.org/t/p/original${item.poster_path}`} className="rounded-md" style={{
-                    width: `${wdToPixel}px`,
+                    width: `${wdToPixel}px`
+                 
                    }}/>
                    </Link>
                    <Link  className= "line-clamp-1" to ={`/filme/${item.id}`}>{item.title}</Link>    
                     </div>
                   ))
+                
                 }
+
             </div>
             {
             showControls&&
