@@ -28,10 +28,9 @@ const CarrosselMelhorAval = () =>{
     },[])
 return(
     <>
-    {
-        !isLoading &&
-   <Carrossel2 obj = {filmes}/>
-    }
+
+   <Carrossel2 obj = {filmes} isloading={isLoading}/>
+
    </>
 )
 } 

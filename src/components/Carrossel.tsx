@@ -48,7 +48,7 @@ const Carosel = ({height=150,time = 10000}) =>{
     return(
         <div>
               { isLoading &&
-                <div className="bg-gray-900"style={{
+                <div className="bg-gray-500"style={{
                     width: '100vw',
                     height: hgToPixel
                 }}></div>
