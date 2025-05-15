@@ -77,7 +77,7 @@ const Carrossel2 = ({obj,width = 50,marginStart = 0.2,isloading}:Carrossel2Props
                     width: `${wdToPixel}px`
                    }}/>
                    </Link>
-                   <Link  className= "line-clamp-1" to ={`/filme/${item.id}`}>{item.title}</Link>    
+                   <p  className= "line-clamp-1">{item.title}</p>    
                     </div>
                   ))
                 
