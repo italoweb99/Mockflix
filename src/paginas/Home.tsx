@@ -16,7 +16,7 @@ const Home = () => {
           <div className="mt-6 font-medium">
             <div className="flex items-center m-2 ml-10 text-gray-200 hover:text-gray-300 text-lg">           
              <h1 className="text-2xl font-bold ">Em Cartaz</h1>
-            <Link to={'/Mockflix/filmes/em_cartaz'} className="flex items-center ml-10 ">Veja mais
+            <Link to={'/filmes/em_cartaz'} className="flex items-center ml-10 ">Veja mais
             <FaChevronRight className=" ml-1"/>
             </Link>
             </div>
@@ -25,7 +25,7 @@ const Home = () => {
           <div className="mt-6 font-medium ">
           <div className="flex items-center m-2 ml-10 text-gray-200 hover:text-gray-300 text-lg">           
              <h1 className="text-2xl font-bold ">Em Alta</h1>
-            <Link to={'/Mockflix/filmes/populares'} className="flex items-center ml-10 ">Veja mais
+            <Link to={'/filmes/populares'} className="flex items-center ml-10 ">Veja mais
             <FaChevronRight className=" ml-1"/>
             </Link>
             </div>
@@ -34,7 +34,7 @@ const Home = () => {
           <div className="mt-6 font-medium ">
           <div className="flex items-center m-2 ml-10 text-gray-200 hover:text-gray-300 text-lg">           
              <h1 className="text-2xl font-bold ">Melhor Avaliados</h1>
-            <Link to={'/Mockflix/filmes/melhor_avaliados'} className="flex items-center ml-10 ">Veja mais
+            <Link to={'/filmes/melhor_avaliados'} className="flex items-center ml-10 ">Veja mais
             <FaChevronRight className=" ml-1"/>
             </Link>
             </div>

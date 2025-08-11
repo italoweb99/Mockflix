@@ -25,7 +25,7 @@ const ScrollInfinito = ({tipo}:ScrollInfinitoTipo) =>{
            const res = await axios.get(`https://api.themoviedb.org/3/search/movie`,{
             params:{
                 query: query,
-                api_key: "c603e5708f0df97ff3bcd6e0833721a8",
+                api_key: import.meta.env.VITE_API_KEY,
                 language: "pt-BR",
                 page: page
             }
@@ -44,7 +44,7 @@ const ScrollInfinito = ({tipo}:ScrollInfinitoTipo) =>{
         try{
           const res =  await axios.get(`https://api.themoviedb.org/3/movie/${tipo}`,{
                 params:{
-                    api_key: "c603e5708f0df97ff3bcd6e0833721a8",
+                    api_key: import.meta.env.VITE_API_KEY,
                     language: "pt-BR",
                     page: page
                 }
@@ -84,7 +84,7 @@ const ScrollInfinito = ({tipo}:ScrollInfinitoTipo) =>{
         </p>
       ) : (
         movies.map((movie, index) => (
-          <Link key={`${movie.id}-${index}`} to={`/Mockflix/filme/${movie.id}`}>
+          <Link key={`${movie.id}-${index}`} to={`/filme/${movie.id}`}>
             <div className="hover:scale-110 transition-all duration-300">
               <img className="rounded-lg" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} />
               <p className="line-clamp-1">{movie.title}</p>

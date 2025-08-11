@@ -72,7 +72,7 @@ const Carrossel2 = ({obj,width = 50,marginStart = 0.2,isloading}:Carrossel2Props
                   obj.map((item: any) =>(
                     <div key = {item.id} className="text-gray-200 relative w-full hover:scale-110 transition-all duration-300"
                     >
-                    <Link to = {`/Mockflix/filme/${item.id}`} key = {item.id}>
+                    <Link to = {`/filme/${item.id}`} key = {item.id}>
                    <img  src={`https://image.tmdb.org/t/p/original${item.poster_path}`} className="rounded-md" style={{
                     width: `${wdToPixel}px`
                    }}/>
