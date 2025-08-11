@@ -13,7 +13,7 @@ const Carosel = ({height=150,time = 10000}) =>{
     const getFilmes = async () =>{
         await axios.get(`https://api.themoviedb.org/3/movie/now_playing`,{
             params:{
-                api_key:"c603e5708f0df97ff3bcd6e0833721a8",
+                api_key: import.meta.env.VITE_API_KEY,
                 language: "pt-BR",
                 page: 1,
             }

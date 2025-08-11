@@ -38,7 +38,7 @@ const SearchBar = ({isScroll=false,sboxState,onFocus,boxHandler,getFilmes,search
         
           params:{
             query: query,
-            api_key:"c603e5708f0df97ff3bcd6e0833721a8",
+            api_key:import.meta.env.VITE_API_KEY,
             language: "pt-BR",
             
           }

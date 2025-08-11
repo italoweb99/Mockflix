@@ -15,7 +15,7 @@ const Filme = () =>{
     const getStreaming = async () =>{
         await axios.get(`https://api.themoviedb.org/3/movie/${id}/watch/providers`,{
             params:{
-                api_key:"c603e5708f0df97ff3bcd6e0833721a8",
+                api_key:import.meta.env.VITE_API_KEY,
                 language: "pt-BR"
             
             }})
@@ -33,7 +33,7 @@ const Filme = () =>{
     const loadMovie = async() =>{
         await axios.get(`https://api.themoviedb.org/3/movie/${id}`,{
             params:{
-                api_key:"c603e5708f0df97ff3bcd6e0833721a8",
+                api_key:import.meta.env.VITE_API_KEY,
                 language: "pt-BR",
             
             }
@@ -52,7 +52,7 @@ const Filme = () =>{
     const getTrailer = async() =>{
         await axios.get(`https://api.themoviedb.org/3/movie/${id}/videos`,{
             params:{
-                api_key:"c603e5708f0df97ff3bcd6e0833721a8",
+                api_key:import.meta.env.VITE_API_KEY,
                 language: "pt-BR",
                 
             }
