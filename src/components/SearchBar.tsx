@@ -15,7 +15,7 @@ const SearchBar = ({isScroll=false,sboxState,onFocus,boxHandler,getFilmes,search
     const nav = useNavigate()
     const handleKeyDown = (e:any) =>{
         if(e.key == 'Enter' && query.trim()!=''){
-           nav(`Mockflix/search/${query}`);
+           nav(`search/${query}`);
            searchClick()
         }
     }

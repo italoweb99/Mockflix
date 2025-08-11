@@ -62,7 +62,7 @@ function Header() {
       }`}
     >
       <div className={`bg-bgpurple/80 mx-10 px-6 py-5 flex  items-center backdrop-blur-sm transition-all duration-300 ${scrolling ? 'shadow-lg rounded-b-xl': 'shadow-none' }`}>
-      <Link to ='/Mockflix' className="rounded-b-xl">
+      <Link to ='/' className="rounded-b-xl">
         <h1 className= 'text-2xl font-bold text-gray-200 hover:text-gray-300'>Mockflix</h1>
         </Link>
         <SearchBar isScroll={scrolling} onFocus = {handleSbarFocus} sboxState = {sboxFocus} boxHandler={handleBox} getFilmes={handleFilmes} searchClick = {handleSearchclick}/>

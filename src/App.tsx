@@ -20,12 +20,12 @@ function App() {
     <Header/>
     <main className="pt-18 bg-bgpurple ">
     <Routes>
-      <Route path="/Mockflix" element = {<Home/>}/>
-      <Route path="/Mockflix/filme/:id" element={<Filmes/>}/>
-      <Route path="/Mockflix/filmes/Populares" element ={<PopularesPag/>}/>
-      <Route path="/Mockflix/filmes/em_cartaz" element = {<EmCartazPag/>}/>
-      <Route path="/Mockflix/filmes/melhor_avaliados" element={<MelhorAvaliadosPag/>}/>
-      <Route path="/Mockflix/search/:query" element={<SearchPag/>}/>
+      <Route path="/" element = {<Home/>}/>
+      <Route path="/filme/:id" element={<Filmes/>}/>
+      <Route path="/filmes/Populares" element ={<PopularesPag/>}/>
+      <Route path="/filmes/em_cartaz" element = {<EmCartazPag/>}/>
+      <Route path="/filmes/melhor_avaliados" element={<MelhorAvaliadosPag/>}/>
+      <Route path="/search/:query" element={<SearchPag/>}/>
     </Routes>
     </main>
     </BrowserRouter>

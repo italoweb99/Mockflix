@@ -84,7 +84,7 @@ const ScrollInfinito = ({tipo}:ScrollInfinitoTipo) =>{
         </p>
       ) : (
         movies.map((movie, index) => (
-          <Link key={`${movie.id}-${index}`} to={`/Mockflix/filme/${movie.id}`}>
+          <Link key={`${movie.id}-${index}`} to={`/filme/${movie.id}`}>
             <div className="hover:scale-110 transition-all duration-300">
               <img className="rounded-lg" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} />
               <p className="line-clamp-1">{movie.title}</p>

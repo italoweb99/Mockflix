@@ -9,7 +9,7 @@ interface sbType  {
 const SearchBox = ({ref, onFocusParam,filmeList}:sbType) =>{
     const nav = useNavigate()
    const clickHandle = (e: any) =>{
-    nav(`Mockflix/filme/${e}`)
+    nav(`filme/${e}`)
     nav(0)
     onFocusParam(false)
    }
