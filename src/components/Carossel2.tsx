@@ -61,7 +61,7 @@ const Carrossel2 = ({obj,width = 50,marginStart = 0.2,isloading}:Carrossel2Props
             }
                 </div>
          }
-            <div  className="flex space-x-3 transition ease-out duration-500" style={{
+            <div  className="flex space-x-3 transition ease-out duration-500 py-4" style={{
                 transform: `translateX(-${current*(wdToPixel)}px)`,
                 marginInlineStart: `${wdToPixel*marginStart}px`,
                 width: obj.length*wdToPixel
@@ -70,15 +70,14 @@ const Carrossel2 = ({obj,width = 50,marginStart = 0.2,isloading}:Carrossel2Props
                 {
                    ! isloading && 
                   obj.map((item: any) =>(
-                    <div key = {item.id} className="text-gray-200 relative w-full"
+                    <div key = {item.id} className="text-gray-200 relative w-full hover:scale-110 transition-all duration-300"
                     >
                     <Link to = {`/filme/${item.id}`} key = {item.id}>
                    <img  src={`https://image.tmdb.org/t/p/original${item.poster_path}`} className="rounded-md" style={{
                     width: `${wdToPixel}px`
-                 
                    }}/>
                    </Link>
-                   <Link  className= "line-clamp-1" to ={`/filme/${item.id}`}>{item.title}</Link>    
+                   <p  className= "line-clamp-1">{item.title}</p>    
                     </div>
                   ))
                 

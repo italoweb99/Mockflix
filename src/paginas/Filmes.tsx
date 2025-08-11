@@ -80,7 +80,7 @@ const Filme = () =>{
  return(
     <div className="bg-bgpurple">
     {!isLoading &&
-   <div className="h-screen">
+   <div key={filme?.title} className="h-screen">
  <div className="relative">
 {isTrailer?(
    

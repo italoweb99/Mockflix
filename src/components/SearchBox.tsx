@@ -9,9 +9,12 @@ interface sbType  {
 const SearchBox = ({ref, onFocusParam,filmeList}:sbType) =>{
     const nav = useNavigate()
    const clickHandle = (e: any) =>{
+
     nav(`filme/${e}`)
     nav(0)
+
     onFocusParam(false)
+    //console.log("teste")
    }
 useEffect(()=>{
     onFocusParam(true);
@@ -21,7 +24,7 @@ useEffect(()=>{
        {
         filmeList.length > 0?(
         filmeList.map(filme =>(
-            <div onClick={()=>clickHandle(filme.id)} className="flex items-center my-1 transition-all ease-out duration-300 mx-3 cursor-pointer hover:bg-bgpurplehover/80 rounded-lg"  >
+            <div key={filme.id} onClick={()=>clickHandle(filme.id)} className="flex items-center my-1 transition-all ease-out duration-300 mx-3 cursor-pointer hover:bg-bgpurplehover/80 rounded-lg"  >
             <img src={`https://image.tmdb.org/t/p/w500${filme.backdrop_path}`} className="h-28 rounded-s-lg"/>
             <p className="ml-20 font-medium">{filme.title}</p>
             </div>
